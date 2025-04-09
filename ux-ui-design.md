@@ -217,3 +217,21 @@ Point faible: le site est trop du coté droit, impossible d'utiliser la fonction
 
     Stack technologique : jQuery
     Scores de performance : 65 performances // 79 accessibilité // 100 bonnes pratiques // 100 SEO
+
+-----
+-----
+-----
+-----
+-----
+3- Architecture de l'Information
+---
+                           Page d'accueil
+                                |
+       +------------------------+-------------------------+
+       |                        |                         |
+   Contact                  Catalogue                  Panier
+                                |
+        +-----------------------+--------------------------+
+        |                       |                          |
+   Par occasion             Par style                Par budget
+
