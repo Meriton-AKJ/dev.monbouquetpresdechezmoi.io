@@ -2,7 +2,7 @@
 Informer, vendre, divertir, représenter une entreprise ou une personne ? 
 ---
 
-<-Le but principale du site est de vendre des bouquets de fleurs, de pouvoir créer un bouquet en ligne et de venir le prendre directement dans le magasin. Il y aura également une section pour informer sur les différents types de fleurs.
+<-Le but principale du site est de vendre des bouquets de fleurs, de pouvoir créer un bouquet en ligne et de venir le prendre directement dans le magasin.
 
 1-1-2-Que doit faire l'utilisateur idéalement en visitant le site ? (cliquer, s'inscrire, acheter, lire…)
 ---
@@ -80,7 +80,7 @@ Habitudes numériques :
 
 Utilisent Pinterest, Instagram, TikTok pour l’inspiration
 
-Recherchent des prestataires via Google ou des plateformes mariage (ex : Mariages.net, Zankyou)
+Recherchent des prestataires via Google ou des plateformes mariage
 
 Attentifs aux portfolios, avis clients, et options de personnalisation
 
@@ -205,16 +205,16 @@ Point faible: le site est trop du coté droit, impossible d'utiliser la fonction
 
         *Avec cache
 
-     Temps de chargement: Finish: 6.57 s
-     Poids des pages: 6.6 MB resources / 10.0 kB transferred
-     Nombre de requête: 206 requests
+     TTemps de chargement: Finish: 1.90 s
+    Poids des pages: 992 kB transferred / 4.5 MB resources
+    Nombre de requête: 30 requests 
 
         *Sans cache
 
-    Temps de chargement: Finish: 7.64 s
-    Poids des pages: 2.9 MB transferred / 7.1 MB resources
-    Nombre de requête: 222 requests 
-
+ Temps de chargement: Finish: 37.06 s
+     Poids des pages: 5.0 MB resources / 2.6MB transferred
+     Nombre de requête: 42 requests
+     
     Stack technologique : jQuery
     Scores de performance : 65 performances // 79 accessibilité // 100 bonnes pratiques // 100 SEO
 
