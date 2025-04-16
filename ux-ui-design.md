@@ -231,7 +231,4 @@ Point faible: le site est trop du coté droit, impossible d'utiliser la fonction
        |                        |                         |                        |
    Contact                  Catalogue                  Panier                   A propos
                                 |
-        +-----------------------+--------------------------+
-        |                       |                          |
-   Par occasion             Par style                Par budget
-
+                            Page de détail
