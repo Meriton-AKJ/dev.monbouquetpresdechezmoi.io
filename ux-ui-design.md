@@ -227,9 +227,9 @@ Point faible: le site est trop du coté droit, impossible d'utiliser la fonction
 ---
                            Page d'accueil
                                 |
-       +------------------------+-------------------------+
-       |                        |                         |
-   Contact                  Catalogue                  Panier
+       +------------------------+-------------------------+------------------------+
+       |                        |                         |                        |
+   Contact                  Catalogue                  Panier                   A propos
                                 |
         +-----------------------+--------------------------+
         |                       |                          |
