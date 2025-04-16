@@ -1,38 +1,86 @@
 <!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>Acceuil</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="style.css" rel="stylesheet">
-    </head>
-    <body>
-        <header class="header">
-            <img src="#" alt="Logo du site">
-            <a href="panier.html">Panier</a>
-            <nav class="navbar">
-                <ul>
-                    <li><a href="index.html">Acceuil</a></li>
-                    <li><a href="catalogue.html">Catalogue</a></li>
-                    <li><a href="propos.html">A propos</a></li>
-                    <li><a href="contact.html">contact</a></li>
-                </ul>
-            </nav>
-        </header>
+<html lang="fr">
 
-        <footer class="footer">
+<head>
+    <title>Acceuil</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+    <!--Section 0: Header-->
+    <header>
+        <img src="#" alt="Logo du site">
+        <a href="panier.html">Panier</a>
+        <nav class="navbar">
             <ul>
                 <li><a href="index.html">Acceuil</a></li>
                 <li><a href="catalogue.html">Catalogue</a></li>
                 <li><a href="propos.html">A propos</a></li>
                 <li><a href="contact.html">contact</a></li>
             </ul>
-            <ul>
-                <li><a href="instagram.com">Instagram</a></li>
-                <li><a href="facebook.com"></a>Facebook</li>
-                <li><a href="linkedin.com"></a>LinkedIn</li>
-                <li><a href="googlemaps.com"></a>Adresse Boutique</li>
-            </ul>
-        </footer>
-    </body>
+            <form action="">
+                <input type="text" placeholder="Barre de recherche" class="search-bar">
+                <button type="submit">Rechercher</button>
+            </form>
+        </nav>
+    </header>
+
+    <!--Section 1: bannière promotionnel//Image de bouquets saisonniers-->
+    <section id="banniere-promo">
+        <h2>Découvrez notre promotion de la semaine</h2>
+        <img src="#" alt="Image de bouquets promotionnel">
+    </section>
+
+    <!--Section 2: catalogue-->
+    <section id="catalogue-acceuil">
+        <h3>
+            <img src="#" alt="Roses de jardin">
+            <p>Rose de jardin</p>
+        </h3>
+        <h3>
+            <img src="#" alt="Tulipes">
+            <p>Tulipes</p>
+        </h3>
+        <!--3 points pour swiper-->
+    </section>
+
+    <!--Section 3: Projets à venir-->
+    <section id="a-venir-acceuil">
+        <img src="#" alt="Bouquets estivales">
+        <p>Découvrez nos bouquets estivales en avance!</p>
+
+        <img src="#" alt="Bouquets automnales">
+        <p>Découvrez nos bouquets automnales en avance!</p>
+    </section>
+
+    <!--Section 4: E-mail // contact-->
+    <section id="contact-acceuil">
+        <h2>Rejoignez nous</h2>
+        <ul>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">E-mail</a></li>
+        </ul>
+    </section>
+
+
+    <!--Section 5: Footer-->
+    <footer>
+        <ul>
+            <li><a href="index.html">Acceuil</a></li>
+            <li><a href="catalogue.html">Catalogue</a></li>
+            <li><a href="propos.html">A propos</a></li>
+            <li><a href="contact.html">contact</a></li>
+        </ul>
+        <ul>
+            <li><a href="instagram.com">Instagram</a></li>
+            <li><a href="facebook.com"></a>Facebook</li>
+            <li><a href="linkedin.com"></a>LinkedIn</li>
+            <li><a href="googlemaps.com"></a>Adresse Boutique</li>
+        </ul>
+        <!--Image google maps-->
+    </footer>
+</body>
+
 </html>
