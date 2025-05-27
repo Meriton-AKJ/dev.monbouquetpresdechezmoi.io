@@ -1,5 +1,6 @@
 <?php
 
+// Affiche le catalogue de produits
 function catalogue()
 {
     
@@ -8,12 +9,14 @@ function catalogue()
     render('catalogue/catalogue.php', ['mesproduits' => $products]);
 
 }
+
+// Affiche les produits d'une saison spécifique
 function saison($season_slug){
     
     
     $stmt = db()->prepare('SELECT * FROM `item` 
-JOIN tag t_season ON item.season_tag_id = t_season.id
-WHERE t_season.slug = :season_slug;');
+                           JOIN tag t_season ON item.season_tag_id = t_season.id
+                           WHERE t_season.slug = :season_slug;');
     $stmt->execute(['season_slug' => $season_slug]);
     $products = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
@@ -24,8 +27,11 @@ WHERE t_season.slug = :season_slug;');
 
     render('catalogue/catalogue.php', ['mesproduits' => $products, 'seasons' => $seasons]);
 }
-function item()
-{
-    echo ('page dune fleur');
-}
 
+// Affiche UN SEUL produit basé sur son slug
+function item($slug) {
+    $stmt = db()->prepare('SELECT * FROM item WHERE slug = ?');
+    $stmt->execute([$slug]);
+    $product = $stmt->fetch(PDO::FETCH_ASSOC);
+    render('catalogue/fleur.php', ['produit' => $product]);
+}

@@ -1,21 +1,22 @@
   <?php foreach ($data['seasons'] as $season): ?>
-  <a href=""><?= $season['name'] ?></a><br>
+    <a href=""><?= $season['name'] ?></a><br>
   <?php endforeach; ?>
 
-<section class="catalogue-catalogue">
+  <section class="catalogue-catalogue">
+    <?php
+    if (!empty($data['mesproduits']) && is_array($data['mesproduits'])) {
+      foreach ($data['mesproduits'] as $product) {
+        echo '<article class="card" style="width: 22rem;">';
+        echo '<h2>' . $product['title'] . '</h2>';
+        echo '<img src="/assets/images/' . $product['avatar'] . '" alt="' . $product['title'] . '">';
+        echo '<p>' . $product['description'] . '</p>';
+        echo '<p>Prix: ' . $product['price'] . ' €</p>';
+        echo '<a href="/catalogue/item/' . $product['slug'] . '">Voir le produit</a>';
+        echo '</article>';
+      }
+    }
+    ?>
+  </section>
 
 
-
-  <?php foreach ($data['mesproduits'] as $product): ?>
-    <article class="card" style="width: 22rem;">
-      <img src="/assets/images/<?= $product['avatar'] ?>" class="card-img-top" alt="<?= $product['title'] ?>">
-      <div class="card-body">
-        <h5 class="card-title"><?= $product['title'] ?></a></h5>
-        <p class="card-text"><?= $product['description'] ?></p>
-        <p class="card-text"><?= $product['price'] ?> €</p>
-      </div>
-    </article>
-  <?php endforeach; ?>
-
-</section>
-<!--<a href="/fleur.php">-->
+  <!--<a href="/fleur.php">-->

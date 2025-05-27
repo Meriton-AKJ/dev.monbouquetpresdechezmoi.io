@@ -8,6 +8,7 @@ function render($partial, $data = [], $zone = "public"): void
     if (!file_exists($skeletonPath) || !file_exists($partialPath)) {
         http_response_code(500);
         echo "Template not found.";
+        /*var_dump($skeletonPath, $partialPath);*/
         return;
     }
 

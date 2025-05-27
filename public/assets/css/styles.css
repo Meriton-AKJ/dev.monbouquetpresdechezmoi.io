@@ -7,7 +7,7 @@
 
 /* Corps de page */
 body {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   background-color: #fdfdfdd3;
   color: #333;
   line-height: 1.6;
@@ -16,8 +16,10 @@ img {
   width: 100%;
   height: auto;
 }
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
   color: #222;
 }
 /* ===== Header ===== */
@@ -95,17 +97,16 @@ header a:hover {
 }
 
 .navbar button {
-    padding: 10px 20px;
-    background-color: #502e51;
-    color: white;
-    border: none;
-    transition: background-color 0.3s ease;
-    cursor: pointer;
-  }
-
+  padding: 10px 20px;
+  background-color: #502e51;
+  color: white;
+  border: none;
+  transition: background-color 0.3s ease;
+  cursor: pointer;
+}
 
 .navbar button:hover {
-   background-color: #8106aa;
+  background-color: #8106aa;
   transform: scale(1.05);
   transition: transform 0.5s;
 }
@@ -134,8 +135,6 @@ footer ul {
   list-style: none;
 }
 
-
-
 footer a {
   font-size: 18px;
   text-decoration: none;
@@ -148,6 +147,44 @@ footer a:hover {
   color: #68086b;
 }
 
+/*Section 0: Comment ca maarche*/
+#comment-marche {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  margin: 20px 0px;
+  border-radius: 10px;
+}
+
+#comment-marche h2 {
+  margin-bottom: 20px;
+  background-color: rgb(251, 222, 224);
+  border-radius: 10px;
+}
+
+#comment-marche p {
+  margin: 50px 0px;
+}
+
+#comment-marche a {
+  display: inline-block; 
+  text-decoration: none;
+  color: #502e51;
+  font-weight: bold;
+  background-color: rgb(251, 222, 224);
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+#comment-marche a:hover {
+  color: #68086b;
+  background-color: #fdfdfdd3;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
 
 /* Section 1: Bannière */
 #banniere-promo {
@@ -162,8 +199,8 @@ footer a:hover {
   text-align: center;
 }
 
-.image-banniere-promo{
-  display: flex;
+.image-banniere-promo {
+  display: block;
   align-items: center;
   width: 50%;
   height: auto;
@@ -171,9 +208,19 @@ footer a:hover {
   margin: 0 auto;
   background-color: rgb(251, 222, 224);
   border-radius: 10px;
-}  
+}
+
+.image-banniere-promo p {
+  margin-top: 10px;
+  font-size: 18px;
+}
 
 /* Section 2: Catalogue */
+.titre-catalogue-acceuil {
+  text-align: center;
+  margin: 20px 0px;
+}
+
 #catalogue-acceuil {
   display: flex;
   justify-content: center;
@@ -225,31 +272,112 @@ footer a:hover {
 
 /* Section 4: Contact */
 #contact-acceuil {
-  background-color: rgb(251, 222, 224);
-  padding: 30px 20px;
+  display: block;
   text-align: center;
+  padding: 20px;
+  margin: 20px 0px;
   border-radius: 10px;
-  margin: 30px 0px;
 }
 
-#contact-acceuil ul {
-  list-style: none;
-  padding: 10px;
-  display: flex;
-  justify-content: center;
-  gap: 30px;
+#contact-acceuil h2 {
+  margin-bottom: 50px;
+  background-color: rgb(251, 222, 224);
+  border-radius: 10px;
 }
 
 #contact-acceuil a {
+  display: inline-block;
   text-decoration: none;
   color: #502e51;
   font-weight: bold;
+  padding: 10px;
+  margin: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: transform 0.3s ease-in-out;
 }
 
 #contact-acceuil a:hover {
   color: #68086b;
+  background-color: rgb(251, 222, 224);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
 }
 
+/* Section 5: composer un bouquet */
+#composer-bouquet-acceuil {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+#composer-bouquet-acceuil h2 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  background-color: rgb(251, 222, 224);}
+
+.etape-composer {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.etape {
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.numero {
+  background:#fdfdfdd3;
+  border: 1px solid black;
+  color: rgb(251, 222, 224);
+  font-weight: bold;
+  font-size: 1.5rem;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+
+
+.etape h3 {
+  margin: 10px 0 5px;
+  font-size: 1.2rem;
+}
+
+.etape p {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  border: 1px solid rgb(251, 222, 224);;
+}
+
+#composer-bouquet-acceuil a {
+  display: inline-block;
+  text-decoration: none;
+  color: #502e51;
+  font-weight: bold;
+  padding: 10px;
+  margin: 50px 10px; 
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: transform 0.3s ease-in-out;
+}
+
+#composer-bouquet-acceuil a:hover {
+  color: #68086b;
+  background-color: rgb(251, 222, 224);
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+/* Section 6: Catalogue */
 section.catalogue-catalogue {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(22rem, 1fr));

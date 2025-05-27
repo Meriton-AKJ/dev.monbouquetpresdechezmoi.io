@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 define('SITE_ROOT', __DIR__.'/../');
 
 require_once(SITE_ROOT.'app/view/template_engine.php');
@@ -19,7 +19,8 @@ $zone = 'public'; // Default zone
 if(!empty($uri_parts[0]) && $uri_parts[0] === 'admin'){
     $zone = 'admin';
     array_shift($uri_parts); // Remove 'admin' from the parts
-} 
+}
+else $zone = 'public';
 
 if(empty($uri_parts[0])){
     $controller = 'home';
@@ -27,6 +28,9 @@ if(empty($uri_parts[0])){
 else{
     $controller = $uri_parts[0];
 }
+
+if($zone === 'admin' && empty($_SESSION['active_user']))
+    header('Location: /checkin');
 
 if (empty($uri_parts[1])) {
     $action = $controller;

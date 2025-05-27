@@ -4,7 +4,7 @@ function add(){
 }
 
 function save(){
-    $fleur = [
+    $fleurs = [
         ':operator_id' => $_POST['operator_id'],
         ':category_tag_id' => $_POST['category_tag_id'],
         ':theme_tag_id' => $_POST['theme_tag_id'],
@@ -26,7 +26,7 @@ function save(){
     ) VALUES (
         :operator_id, :category_tag_id, :theme_tag_id, :season_tag_id, :color_tag_id, 
         :title, :slug, :description, :content, :avatar, :price, :stock, :status
-    )')->execute($fleur);
+    )')->execute($fleurs);
 
     // Redirection après insertion
     header('Location: /admin/catalogue/add');

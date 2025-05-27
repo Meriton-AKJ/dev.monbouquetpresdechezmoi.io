@@ -1,6 +1,4 @@
-<h1>Ajouter une fleur
-    
-</h1>
+<h1>Ajouter une fleur</h1>
 
 <form action="/admin/catalogue/save" method="post" enctype="multipart/form-data">
     <label>Opérateur (ID): <input type="number" name="operator_id" required></label><br>
