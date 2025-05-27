@@ -6,7 +6,8 @@
     <?php
     if (!empty($data['mesproduits']) && is_array($data['mesproduits'])) {
       foreach ($data['mesproduits'] as $product) {
-        echo '<article class="card" style="width: 22rem;">';
+        echo '<article class="card">';
+        echo '<hr>';
         echo '<h2>' . $product['title'] . '</h2>';
         echo '<img src="/assets/images/' . $product['avatar'] . '" alt="' . $product['title'] . '">';
         echo '<p>' . $product['description'] . '</p>';
@@ -18,5 +19,3 @@
     ?>
   </section>
 
-
-  <!--<a href="/fleur.php">-->

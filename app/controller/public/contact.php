@@ -12,5 +12,5 @@ function contact()
 { 
      render('contact/contact.php');
 
-    // include(SITE_ROOT . '/app/view/public/contact/contact.php');
+    //include(SITE_ROOT . '/app/view/public/contact/contact.php');
 }
