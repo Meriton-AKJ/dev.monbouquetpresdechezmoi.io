@@ -9,7 +9,7 @@
   <hr>
   <!--Section 1: bannière promotionnel//Image de bouquets saisonniers-->
   <section id="banniere-promo">
-      <h2>Découvrez notre promotion de la semaine</h2>
+      <h2>Découvrez Notre Promotion De La Semaine</h2>
       <div class="image-banniere-promo">
           <img src="assets/images/Bouquet promotionnel Hiver.jpg" alt="Image de bouquets promotionnel">
           <p>Bouquet <strong>hivernale</strong></p>
@@ -20,7 +20,7 @@
 
   <!--Section 2: catalogue-->
   <div class="titre-catalogue-acceuil">
-    <h2>Dernières nouveautés du catalogue</h2>
+    <h2>Dernières Nouveautés Du Catalogue</h2>
   </div>
   
   <section id="catalogue-acceuil">
@@ -34,19 +34,22 @@
     <hr>
 
   <!--Section 3: Projets à venir-->
-  <section id="a-venir-acceuil">
-      <img src="assets/images/Bouquet estivale.jpg" alt="Bouquets estivales">
-      <a href="/catalogue/season/ete">Découvrez notre bouquet <strong>estivale</strong>, en avance!</a>
+<section id="a-venir-acceuil">
+  <div class="bouquet-block gauche">
+    <img src="assets/images/Bouquet estivale.jpg" alt="Bouquets estivales">
+    <a href="/catalogue/season/ete">Découvrez notre bouquet <strong>estivale</strong>, en avance!</a>
+  </div>
 
-      <img src="assets/images/Bouquet automnale.jpg" alt="Bouquets automnales">
-      <a href="/catalogue/season/automne">Découvrez notre bouquet <strong>automnale</strong>, en avance!</a>
+  <div class="bouquet-block droite">
+    <img src="assets/images/Bouquet automnale.jpg" alt="Bouquets automnales">
+    <a href="/catalogue/season/automne">Découvrez notre bouquet <strong>automnale</strong>, en avance!</a>
+  </div>
+</section>
 
-  </section>
-  
     <hr>
   <!--Section 4: E-mail // contact-->
   <section id="contact-acceuil">
-      <h2>Rejoignez nous</h2>
+      <h2>Rejoignez Nous</h2>
 
       <a href="contact.html">Contact</a>
       <a href="#">E-mail</a>

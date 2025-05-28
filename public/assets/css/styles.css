@@ -22,132 +22,129 @@ h3 {
   font-family: "Playfair Display", serif;
   color: #222;
 }
-/* ===== Header ===== */
+/* Section : Header */
 header {
   background-color: rgb(251, 222, 224);
-  padding: 10px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 15px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
 }
 
-header > div {
+.header-container {
+  max-width: 1200px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
 header img {
-  height: auto;
+  height: 60px;
+  width: auto;
+  display: block;
+}
+
+.main-nav .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav a {
+  text-decoration: none;
+  color: #502e51;
+  font-weight: 500;
+  padding: 8px 12px;
+  transition: color 0.3s;
+}
+
+.main-nav a:hover {
+  color: #8106aa;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search-form {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.search-bar {
+  padding: 6px 12px;
+  border-radius: 20px;
+  border: 1px solid #aaa;
   width: 200px;
 }
 
-header a {
-  font-size: 18px;
-  text-decoration: none;
+.cart-icon {
+  font-size: 22px;
   color: #502e51;
-  font-weight: bold;
-  margin: 10px 15px;
+  transition: transform 0.2s;
 }
 
-.lien-panier {
-  font-size: 30px;
+.cart-icon:hover {
+  transform: scale(1.1);
+  color: #8106aa;
 }
 
-header a:hover {
-  color: #68086b;
-}
-/* ===== Navbar ===== */
-.navbar {
-  width: 100%;
+
+
+/*Footer*/
+footer {
+  background-color: rgb(251, 222, 224);
+  padding: 40px 20px 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 30px;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-.navbar ul {
-  display: flex;
-  gap: 25px;
-  list-style: none;
-}
-
-.navbar li a {
-  text-decoration: none;
-  color: #333333;
-  padding: 8px 12px;
-  border-radius: 5px;
-  transition: background 0.2s;
-}
-
-.navbar li a:hover {
-  color: #68086b;
-}
-
-/* Barre de recherche */
-.search-bar {
-  margin: 10px 0px;
-  padding: 8px;
-  width: 250px;
-  border: 1px solid #7e7e7e;
-  border-radius: 5px;
-  text-align: center;
-  border-radius: 20%;
-}
-
-.navbar button {
-  padding: 10px 20px;
-  background-color: #502e51;
-  color: white;
-  border: none;
-  transition: background-color 0.3s ease;
-  cursor: pointer;
-}
-
-.navbar button:hover {
-  background-color: #8106aa;
-  transform: scale(1.05);
-  transition: transform 0.5s;
-}
-
-/* ===== Main ===== */
-main {
-  padding: 20px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* ===== Footer ===== */
-footer {
-  background-color: rgb(251, 222, 224);
-  padding: 30px 20px;
+.footer-columns {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 20px;
-  text-align: center;
+  justify-content: center;
+  gap: 80px;
+  text-align: left;
 }
 
 footer ul {
-  display: grid;
-  gap: 25px;
   list-style: none;
+  padding: 0;
 }
 
 footer a {
-  font-size: 18px;
+  font-size: 16px;
   text-decoration: none;
-  color: #333333;
-  font-weight: bold;
-  margin: 10px 15px;
+  color: #502e51;
+  font-weight: 500;
 }
 
 footer a:hover {
-  color: #68086b;
+  color: #8106aa;
 }
 
-/*Section 0: Comment ca maarche*/
+.footer-legal {
+  font-size: 14px;
+  color: #444;
+  text-align: center;
+  border-top: 1px solid #ddd;
+  padding-top: 15px;
+  width: 100%;
+  max-width: 800px;
+}
+
+
+
+/*Section 0: Comment ca marche*/
 #comment-marche {
   display: block;
   text-align: center;
@@ -249,26 +246,42 @@ footer a:hover {
 /* Section 3: Projets à venir */
 #a-venir-acceuil {
   display: flex;
-  justify-content: center;
-  gap: 40px;
-  flex-wrap: wrap;
-  margin: 50px 0px;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  margin: 50px 0;
 }
 
-#a-venir-acceuil img {
-  width: 320px;
-  height: auto;
+.bouquet-block {
   display: flex;
-  margin: 20px;
-  background-color: rgb(251, 222, 224);
-  padding: 20px;
+  align-items: center;
+  border-radius: 15px;
+  padding: 20px 30px;
+  max-width: 900px;
+  width: 100%;
+  gap: 30px;
+}
+
+.bouquet-block img {
+  width: 320px;
   border-radius: 10px;
 }
 
-#a-venir-acceuil a {
-  text-decoration: none;
+.bouquet-block a {
   color: #502e51;
+  text-decoration: none;
 }
+
+/* Image à gauche, texte à droite */
+.bouquet-block.gauche {
+  flex-direction: row;
+}
+
+/* Texte à gauche, image à droite */
+.bouquet-block.droite {
+  flex-direction: row-reverse;
+}
+
 
 /* Section 4: Contact */
 #contact-acceuil {
@@ -311,10 +324,11 @@ footer a:hover {
 }
 
 #composer-bouquet-acceuil h2 {
-  font-size: 2.2rem;
-  font-weight: bold;
   margin-bottom: 40px;
-  background-color: rgb(251, 222, 224);}
+  background-color: rgb(251, 222, 224);
+  border-radius: 10px;
+}
+
 
 .etape-composer {
   display: flex;
@@ -524,4 +538,69 @@ details[open] summary::before {
 
 .faq-answer li {
   margin-bottom: 6px;
+}
+
+
+/* Contact */
+/* Formulaire de contact */
+#contact-form {
+  max-width: 500px;
+  margin: 60px auto;
+  padding: 60px 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgb(251, 222, 224);
+}
+
+/* Groupe de champs */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Labels */
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #333;
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1.8px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  font-family: inherit;
+  box-sizing: border-box;
+  color: #333;
+}
+
+.btn {
+  display: inline-block;
+  background-color:rgb(251, 222, 224);
+  color: #0c0c0c;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 6px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  user-select: none;
+  margin: 20px 165px;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color:#0c0c0c;
+  color:rgb(251, 222, 224);
+}
+
+/* Pour désactiver la sélection du texte sur bouton lors du clic */
+.btn:active {
+  background-color: #2c5ca6;
 }

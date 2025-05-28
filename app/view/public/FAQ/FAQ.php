@@ -66,8 +66,8 @@
          <h3>Combien de fleurs dois-je commander pour un bouquet ?</h3>
        </summary>
        <div class="faq-answer">
-         <p>Cela dépend de la taille de bouquet souhaitée ! Pour un petit bouquet : 5-7 fleurs, pour un bouquet moyen : 10-15 fleurs, et pour un grand bouquet : 20+ fleurs.
-           N'hésitez pas à ajouter du feuillage (eucalyptus, etc.) pour donner du volume.</p>
+         <p>Cela dépend de la taille de bouquet souhaitée ! 
+          Pour un petit bouquet : 5-7 fleurs, pour un bouquet moyen : 10-15 fleurs, et pour un grand bouquet : 20+ fleurs.</p>
        </div>
      </details>
 
