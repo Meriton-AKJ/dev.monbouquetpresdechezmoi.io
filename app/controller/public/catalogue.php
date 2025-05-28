@@ -33,5 +33,5 @@ function item($slug) {
     $stmt = db()->prepare('SELECT * FROM item WHERE slug = ?');
     $stmt->execute([$slug]);
     $product = $stmt->fetch(PDO::FETCH_ASSOC);
-    render('catalogue/fleur.php', ['produit' => $product]);
+    render('catalogue/item.php', ['produit' => $product]);
 }

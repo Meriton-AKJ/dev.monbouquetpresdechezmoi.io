@@ -1,6 +1,8 @@
-  <?php foreach ($data['seasons'] as $season): ?>
-    <a href=""><?= $season['name'] ?></a><br>
-  <?php endforeach; ?>
+<?php if (!empty($data['seasons']) && is_array($data['seasons'])): ?>
+    <?php foreach ($data['seasons'] as $season): ?>
+        <a href=""><?= htmlspecialchars($season['name']) ?></a><br>
+    <?php endforeach; ?>
+<?php endif; ?>
 
   <section class="catalogue-catalogue">
     <?php
