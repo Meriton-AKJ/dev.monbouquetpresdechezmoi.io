@@ -605,3 +605,101 @@ label {
 .btn:active {
   background-color: #2c5ca6;
 }
+
+/* page détaille d'une fleur */
+.produit-detail {
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #fff0f3;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.produit-card {
+  display: block;
+}
+
+.produit-header h1 {
+  font-size: 32px;
+  color: #502e51;
+  margin-bottom: 10px;
+}
+
+.produit-content {
+  display: flex;
+  gap: 40px;
+}
+
+.produit-image img {
+  width: 450px;
+  border-radius: 20px;
+  background-color: rgb(251, 222, 224);
+  padding: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.produit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.description h3,
+.prix h3 {
+  color: #502e51;
+  font-size: 22px;
+}
+
+.description p,
+.prix p {
+  font-size: 16px;
+  color: #333;
+}
+
+.btn {
+  padding: 10px 18px;
+  border-radius: 10px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background-color: #502e51;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #fdfdfdd3;
+  color: #111111;
+  border: 2px solid #502e51;
+}
+
+.btn-secondary {
+  color: #502e51;
+  border: 2px solid #502e51;
+}
+
+.btn-secondary:hover {
+  border: 2px solid #fdfdfdd3;
+}
+
+/* Message d'erreur */
+.produit-not-found {
+  text-align: center;
+  padding: 60px 20px;
+  background-color: #fff0f3;
+  border-radius: 20px;
+  margin: 50px 50px;
+}
+
+.error-message h2 {
+  font-size: 28px;
+  color: #8106aa;
+  margin-bottom: 10px;
+}
+
+.error-message p {
+  font-size: 18px;
+  color: #502e51;
+  margin-bottom: 20px;
+}
