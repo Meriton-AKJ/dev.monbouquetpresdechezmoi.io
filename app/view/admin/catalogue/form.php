@@ -1,3 +1,5 @@
+<h1>Modifier une fleur</h1>
+
 <form action="/admin/catalogue/save" method="post" enctype="multipart/form-data">
     <input type="hidden" name="id" value="<?= $data['fleur']['id'] ?? '' ?>">
 
