@@ -14,16 +14,6 @@
     </label>
 
 
-    <label>Catégorie (ID):
-        <select name="category_tag_id" required>
-            <?php foreach ($data['categories'] as $category): ?>
-                <option value="<?= $category['id'] ?>" <?= isset($data['fleur']['category_tag_id']) && $data['fleur']['category_tag_id'] == $category['id'] ? 'selected' : '' ?>>
-                    <?= htmlspecialchars($category['name']) ?>
-                </option>
-            <?php endforeach; ?>
-        </select>
-    </label>
-
 
     <label>Thème (ID):
         <select name="theme_tag_id" required>

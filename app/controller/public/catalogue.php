@@ -14,7 +14,7 @@ function catalogue()
 function saison($season_slug){
     
     
-    $stmt = db()->prepare('SELECT * FROM `item` 
+    $stmt = db()->prepare('SELECT item.* FROM `item` 
                            JOIN tag t_season ON item.season_tag_id = t_season.id
                            WHERE t_season.slug = :season_slug;');
     $stmt->execute(['season_slug' => $season_slug]);

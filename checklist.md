@@ -58,3 +58,9 @@
 - [ ] Accessibilité clavier testée  
 - [ ] Aucun message d’erreur en console navigateur ou PHP
 - [ ] Tester dans 2 navigateurs
+
+<!--<?php if (!empty($data['seasons']) && is_array($data['seasons'])): ?>
+  <?php foreach ($data['seasons'] as $season): ?>
+    <a href=""><?= htmlspecialchars($season['name']) ?>a</a><br>
+  <?php endforeach; ?>
+<?php endif; ?>

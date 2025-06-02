@@ -1,20 +1,19 @@
     <?php
     function add()
     {
-        $operators = db()->query('SELECT id, username FROM operator')->fetchAll();
+        
+       /* $operators = db()->query('SELECT id, username FROM operator')->fetchAll();
         $tags = db()->query('SELECT id, name FROM tag')->fetchAll();
-        render('catalogue/add.php', ['operators' => $operators, 'tags' => $tags], 'admin');
-        /* $operators = db()->query('SELECT id, username FROM operator')->fetchAll();
+        render('catalogue/add.php', ['operators' => $operators, 'tags' => $tags], 'admin');*/
+        $operators = db()->query('SELECT id, username FROM operator')->fetchAll();
         $seasons = db()->query("SELECT id, name FROM tag where type='season'")->fetchAll();
-        $categories = db()->query("SELECT id, name FROM tag where type='category'")->fetchAll();
         $themes = db()->query("SELECT id, name FROM tag where type='theme'")->fetchAll();
         $colors = db()->query("SELECT id, name FROM tag where type='color'")->fetchAll();
-        render('catalogue/form.php', ['operators' => $operators, 
+        render('catalogue/add.php', ['operators' => $operators, 
                                       'seasons' => $seasons, 
-                                      'categories' => $categories, 
                                       'themes' => $themes,
                                       'colors' => $colors,], 
-                                      'admin');*/
+                                      'admin');
 
 
     }
@@ -26,7 +25,6 @@
 
         $operators = db()->query('SELECT id, username FROM operator')->fetchAll();
         $seasons = db()->query("SELECT id, name FROM tag where type='season'")->fetchAll();
-        $categories = db()->query("SELECT id, name FROM tag where type='category'")->fetchAll();
         $themes = db()->query("SELECT id, name FROM tag where type='theme'")->fetchAll();
         $colors = db()->query("SELECT id, name FROM tag where type='color'")->fetchAll();
         $titles = db()->query("SELECT id, title FROM item")->fetchAll();
@@ -42,7 +40,6 @@
                                       'operators' => $operators, 
                                       'tags' => $tags, 
                                       'seasons' => $seasons, 
-                                      'categories' => $categories, 
                                       'themes' => $themes,
                                       'colors' => $colors,
                                       'titles' => $titles,
@@ -71,7 +68,6 @@
     {
         $fleurs = [
             ':operator_id' => $_POST['operator_id'],
-            ':category_tag_id' => $_POST['category_tag_id'],
             ':theme_tag_id' => $_POST['theme_tag_id'],
             ':season_tag_id' => $_POST['season_tag_id'] ?? null,
             ':color_tag_id' => $_POST['color_tag_id'] ?? null,
@@ -86,10 +82,10 @@
         ];
 
         db()->prepare('INSERT INTO item (
-        operator_id, category_tag_id, theme_tag_id, season_tag_id, color_tag_id, 
+        operator_id,  theme_tag_id, season_tag_id, color_tag_id, 
         title, slug, description, content, avatar, price, stock, status
     ) VALUES (
-        :operator_id, :category_tag_id, :theme_tag_id, :season_tag_id, :color_tag_id, 
+        :operator_id, :theme_tag_id, :season_tag_id, :color_tag_id, 
         :title, :slug, :description, :content, :avatar, :price, :stock, :status
     )')->execute($fleurs);
 
@@ -105,7 +101,6 @@
             ':id' => $_POST['id'],
             ':operator_id' => $_POST['operator_id'],
             ':operator_id' => $_POST['operator_id'],
-            ':category_tag_id' => $_POST['category_tag_id'],
             ':theme_tag_id' => $_POST['theme_tag_id'],
             ':season_tag_id' => $_POST['season_tag_id'] ?? null,
             ':color_tag_id' => $_POST['color_tag_id'] ?? null,
@@ -122,7 +117,6 @@
         // Requête SQL de mise à jour
         db()->prepare('UPDATE item SET
         operator_id = :operator_id,
-        category_tag_id = :category_tag_id,
         theme_tag_id = :theme_tag_id,
         season_tag_id = :season_tag_id,
         color_tag_id = :color_tag_id,

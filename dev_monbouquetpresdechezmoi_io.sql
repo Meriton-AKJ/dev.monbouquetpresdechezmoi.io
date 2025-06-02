@@ -70,7 +70,6 @@ CREATE TABLE `item` (
   `status` enum('draft','published','archived') DEFAULT 'draft',
   `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
   `updated_at` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `categorie_id` int(11) DEFAULT NULL,
   `theme_id` int(11) DEFAULT NULL,
   `season` varchar(50) DEFAULT NULL,
   `color` varchar(50) DEFAULT NULL

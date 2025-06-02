@@ -24,7 +24,7 @@
                 </div>
                 
                 <div class="actions">
-                    <button class="btn btn-primary">Ajouter au panier</button>
+                    <button href="/panier" class="btn btn-primary">Ajouter au panier</button>
                     <a href="/catalogue" class="btn btn-secondary">Retour au catalogue</a>
                 </div>
             </div>
