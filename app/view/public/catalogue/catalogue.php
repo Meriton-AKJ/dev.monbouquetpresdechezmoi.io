@@ -1,8 +1,14 @@
-<?php if (!empty($data['seasons']) && is_array($data['seasons'])): ?>
-  <?php foreach ($data['seasons'] as $season): ?>
-    <a href=""><?= htmlspecialchars($season['name']) ?></a><br>
-  <?php endforeach; ?>
-<?php endif; ?>
+
+<section class="catalogue-filtre">
+  <?php
+      echo '<a href="/catalogue" class="filtre-principal">Toutes les fleurs</a>';
+      echo '<a href="/catalogue/saison/ete">Été</a>';
+      echo '<a href="/catalogue/saison/printemps">Printemps</a>';
+      echo '<a href="/catalogue/saison/automne">Automne</a>';
+      echo '<a href="/catalogue/saison/hiver">Hiver</a>';
+  ?>
+</section>
+
 
 <section class="catalogue-catalogue">
   <?php

@@ -392,6 +392,43 @@ footer a:hover {
 }
 
 /* Section 6: Catalogue */
+.catalogue-filtre{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  margin: 40px;
+}
+
+.catalogue-filtre .filtre-principal {
+  background-color: #fdfdfdd3;
+  color: #68086b;
+  border: 1px solid #000;
+}
+
+.catalogue-filtre .filtre-principal:hover {
+  background-color: #68086b;
+  color: #fff;
+}
+
+.catalogue-filtre a{
+  text-decoration: none;
+  color: #502e51;
+  font-weight: bold;
+  background-color: rgb(251, 222, 224);
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  transition: transform 0.3s ease-in-out;
+}
+.catalogue-filtre a:hover {
+  color: #68086b;
+  background-color: #fdfdfdd3;
+  transform: scale(1.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+
 section.catalogue-catalogue {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
