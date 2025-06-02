@@ -438,6 +438,16 @@ form.search-form {
   flex-direction: column;
 }
 
+.stock {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+.stock a{
+  display: flex;
+}
+
 
 /* FAQ */
 /* Conteneur principal */
@@ -601,14 +611,9 @@ label {
   color:rgb(251, 222, 224);
 }
 
-/* Pour désactiver la sélection du texte sur bouton lors du clic */
-.btn:active {
-  background-color: #2c5ca6;
-}
-
 /* page détaille d'une fleur */
 .produit-detail {
-  margin: 40px auto;
+  margin: 40px 40px;
   padding: 20px;
   background-color: #fff0f3;
   border-radius: 20px;
