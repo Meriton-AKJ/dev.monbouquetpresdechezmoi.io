@@ -683,6 +683,82 @@ label {
   color:rgb(251, 222, 224);
 }
 
+/* Styles pour la page de succès */
+
+#success-content {
+  max-width: 500px;
+  padding: 60px 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgb(251, 222, 224);
+}
+
+.success-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.success-header h2 {
+  font-size: 24px;
+  color: #28a745;
+  margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+}
+
+.success-header p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+}
+
+.success-info {
+  margin-bottom: 30px;
+  padding: 20px;
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  border-left: 4px solid #28a745;
+}
+
+.success-info h3 {
+  font-size: 18px;
+  color: #333;
+  margin-bottom: 15px;
+  font-family: "Playfair Display", serif;
+}
+
+.success-info ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.success-info li {
+  padding: 8px 0;
+  color: #555;
+  position: relative;
+  padding-left: 20px;
+}
+
+.success-info li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #28a745;
+  font-weight: bold;
+}
+
+.success-actions {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.success-actions .btn {
+  margin: 0;
+  width: 100%;
+}
+
 /* page détaille d'une fleur */
 .produit-detail {
   margin: 40px 40px;
