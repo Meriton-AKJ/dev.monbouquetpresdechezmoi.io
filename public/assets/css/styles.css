@@ -603,7 +603,43 @@ details[open] summary::before {
 .form-group {
   margin-bottom: 20px;
 }
+.contact-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  align-items: center; /* Aligne les éléments verticalement */
+  margin: 60px auto;
+  max-width: 1000px;
+  padding: 0 20px;
+  flex-wrap: wrap; /* Pour mobile responsive */
+}
 
+#contact-form {
+  max-width: 500px;
+  padding: 60px 30px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgb(251, 222, 224);
+}
+
+.contact-info {
+  flex: 1;
+  max-width: 400px;
+  padding: 40px 30px;
+  background: rgb(251, 222, 224);
+  border-radius: 8px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.05);
+  font-size: 16px;
+  line-height: 1.6;
+  align-self: center; /* S'assure que cette div est centrée par rapport à la hauteur du formulaire */
+}
+
+.contact-info mark{
+  background-color: #fff;
+  color: #000000;
+  padding: 2px 4px;
+  border-radius: 4px;
+}
 /* Labels */
 label {
   display: block;
