@@ -134,6 +134,4 @@
         // Redirection après mise à jour
         header('Location: /admin/catalogue');
         exit;
-    }
-
-    ?>
+    }    
