@@ -40,6 +40,10 @@
 
 <main>%%MAIN_CONTENT%%</main>
 
+<script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="BuK3-j-JjpOneH1AQmxdy";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+
 <!--Section 5: footer-->
 <footer>
   <div class="footer-columns">
@@ -53,7 +57,7 @@
       <li><a href="https://instagram.com/monbouquetpresdechezmoi/">Instagram</a></li>
       <li><a href="https://facebook.com">Facebook</a></li>
       <li><a href="https://linkedin.com">LinkedIn</a></li>
-      <li><a href="https://google.com/maps">Adresse Boutique</a></li>
+      <li><a href="https://google.com/maps/place/Groenveld+66,+1930+Zaventem">Adresse Boutique</a></li>
     </ul>
   </div>
   <div class="footer-legal">
@@ -62,7 +66,7 @@
 </footer>
 
 <!-- Script pour le Dark Mode - OBLIGATOIRE POUR LE BOUTON ! -->
-<script src="/assets/js/dark-mode.js"></script>
+<script src="/assets/JS/dark-mode.js"></script>
 </body>
 
 </html>
