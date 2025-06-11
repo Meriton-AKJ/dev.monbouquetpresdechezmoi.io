@@ -21,9 +21,11 @@ function render($partial, $data = [], $zone = "public"): void
     $partialContent = ob_get_clean();
 
     // Replace the placeholder
-    if (isset($data['head_title'])) {
+   /* if (isset($data['head_title'])) {
         $skeleton = str_replace('%%HEAD_TITLE%%', $data['head_title'], $skeleton);
-    }
+    }*/
+    $title = $data['head_title'] ?? 'MonBouquetPresdeChezMoi';
+    $skeleton = str_replace('%%HEAD_TITLE%%', $title, $skeleton);
 
     $page = str_replace('%%MAIN_CONTENT%%', $partialContent, $skeleton);
 
