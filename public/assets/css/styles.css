@@ -873,15 +873,14 @@ label {
 }
 
 [data-theme="dark"] {
-  /* Dark mode colors */
-  --bg-primary: #0f0f0f;
-  --bg-secondary: #1a4d1a;
-  --text-primary: #e0e0e0;
-  --text-secondary: #f0f0f0;
-  --accent-primary: #4ade80;
-  --accent-secondary: #22c55e;
-  --border-color: #555;
-  --shadow-color: rgba(0, 0, 0, 0.3);
+  --bg-primary: #1a1625;        /* Violet très sombre, comme un ciel nocturne */
+  --bg-secondary: #2d1b3d;      /* Violet foncé avec une pointe de rose */
+  --text-primary: #e8d5e8;      /* Rose très pâle pour le texte */
+  --text-secondary: #f2e8f2;    /* Presque blanc avec une nuance rose */
+  --accent-primary: #c084c0;    /* Rose-violet doux */
+  --accent-secondary: #d4a5d4;  /* Rose-violet plus clair */
+  --border-color: #4a3650;      /* Bordures discrètes */
+  --shadow-color: rgba(45, 27, 61, 0.3);
 }
 
 /* Toggle Button pour Dark Mode - IMPORTANT ! */
