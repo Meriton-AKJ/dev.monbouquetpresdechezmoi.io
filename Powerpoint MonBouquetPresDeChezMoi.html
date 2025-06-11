@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MonBouquetPrèsdeChezMoi - Présentation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            overflow: hidden;
+            color: #333;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+            perspective: 1000px;
+        }
+
+        .slide {
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            display: none;
+            padding: 40px;
+            background: white;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            border-radius: 15px;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from { 
+                opacity: 0; 
+                transform: translateY(30px) rotateX(10deg);
+                filter: blur(5px);
+            }
+            to { 
+                opacity: 1; 
+                transform: translateY(0) rotateX(0);
+                filter: blur(0);
+            }
+        }
+
+        .slide h1 {
+            font-size: 2.8em;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2c5530 0%, #5a7c65 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 20px;
+            text-align: center;
+            line-height: 1.2;
+        }
+
+        .slide h2 {
+            font-size: 2.2em;
+            font-weight: 600;
+            color: #2c5530;
+            margin-bottom: 25px;
+            text-align: center;
+            position: relative;
+        }
+
+        .slide h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, #5a7c65, #2c5530);
+            border-radius: 2px;
+        }
+
+        .slide h3 {
+            font-size: 1.6em;
+            color: #2c5530;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .slide p, .slide li {
+            font-size: 1.1em;
+            line-height: 1.7;
+            color: #555;
+            margin-bottom: 15px;
+        }
+
+        .slide ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .slide li {
+            padding-left: 35px;
+            position: relative;
+            margin-bottom: 12px;
+            transition: all 0.3s ease;
+        }
+
+        .slide li:hover {
+            transform: translateX(5px);
+            color: #2c5530;
+        }
+
+        .slide li:before {
+            content: "🌸";
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-size: 1.2em;
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-slide {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slide::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            animation: float 20s infinite linear;
+        }
+
+        @keyframes float {
+            0% { transform: translateX(0) translateY(0); }
+            100% { transform: translateX(-100px) translateY(-100px); }
+        }
+
+        .hero-slide h1 {
+            color: white;
+            font-size: 3.5em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            z-index: 1;
+            position: relative;
+        }
+
+        .hero-slide p {
+            font-size: 1.2em;
+            color: rgba(255,255,255,0.95);
+            text-align: center;
+            max-width: 700px;
+            z-index: 1;
+            position: relative;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin-top: 15px;
+        }
+
+        .content-box {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #e9ecef;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .content-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #5a7c65, #2c5530);
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .content-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .content-box:hover::before {
+            transform: scaleX(1);
+        }
+
+        .persona-card {
+            background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+            padding: 20px;
+            border-radius: 15px;
+            margin: 15px 0;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .persona-card:hover {
+            transform: translateY(-5px);
+            border-color: #ff8a65;
+            box-shadow: 0 15px 30px rgba(255, 138, 101, 0.2);
+        }
+
+        .persona-card h4 {
+            color: #8b4513;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .tech-stack {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .tech-item {
+            background: linear-gradient(135deg, #5a7c65 0%, #2c5530 100%);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(90, 124, 101, 0.3);
+            border-color: #5a7c65;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, #5a7c65 0%, #2c5530 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(90, 124, 101, 0.3);
+        }
+
+        .nav-btn:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(90, 124, 101, 0.4);
+        }
+
+        .nav-btn:disabled {
+            background: linear-gradient(135deg, #ccc 0%, #999 100%);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255,255,255,0.95);
+            backdrop-filter: blur(10px);
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #2c5530;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+
+        .competitor-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+            width: 100%;
+        }
+
+        .competitor-card {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.4s ease;
+            border: 2px solid transparent;
+        }
+
+        .competitor-card:hover {
+            transform: translateY(-5px);
+            border-color: #5a7c65;
+            box-shadow: 0 15px 30px rgba(90, 124, 101, 0.1);
+        }
+
+        .competitor-card h4 {
+            color: #2c5530;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+            font-weight: 700;
+        }
+
+        .score {
+            font-weight: bold;
+            color: #5a7c65;
+            font-size: 1.1em;
+            margin: 8px 0;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f5e8 0%, #c8e6c9 100%);
+            padding: 30px;
+            border-radius: 20px;
+            margin: 30px 0;
+            border-left: 5px solid #4caf50;
+            text-align: center;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
+            border: 1px solid #f0f0f0;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.12);
+        }
+
+        .icon {
+            font-size: 2.5em;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #5a7c65, #2c5530);
+            transition: width 0.3s ease;
+            z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .slide {
+                padding: 20px 15px;
+                top: 10px;
+                left: 10px;
+                width: calc(100% - 20px);
+                height: calc(100% - 20px);
+            }
+            
+            .slide h1 {
+                font-size: 2em;
+            }
+            
+            .slide h2 {
+                font-size: 1.6em;
+            }
+            
+            .content-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+            
+            .hero-slide h1 {
+                font-size: 2.5em;
+            }
+            
+            .hero-slide p {
+                font-size: 1em;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .competitor-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+    
+    <div class="presentation-container">
+        <div class="slide-counter">
+            <span id="currentSlide">1</span> / <span id="totalSlides">6</span>
+        </div>
+
+        <!-- Slide 1: Titre -->
+        <div class="slide hero-slide active">
+            <h1>MonBouquetPrèsdeChezMoi.io</h1>
+            <p>Plateforme e-commerce de fleurs nouvelle génération</p>
+            <p style="margin-top: 40px; font-size: 1.2em; opacity: 0.9;">Architecture robuste • Expérience utilisateur premium • Implémentation complète</p>
+        </div>
+
+        <!-- Slide 2: Concept et Vision -->
+        <div class="slide">
+            <h2>Vision & Mission</h2>
+            <div class="content-grid">
+                <div class="content-box">
+                    <span class="icon">🎯</span>
+                    <h3>Notre Mission</h3>
+                    <p>Révolutionner l'achat de fleurs en ligne avec la possibilité de créer des bouquets personnalisés et de les récupérer en magasin.</p>
+                </div>
+                <div class="content-box">
+                    <span class="icon">🌍</span>
+                    <h3>Vision d'Expansion</h3>
+                    <p>Développer un réseau de points de relais couvrant toute la Belgique pour une accessibilité maximale.</p>
+                </div>
+                <div class="content-box">
+                    <span class="icon">💎</span>
+                    <h3>Nos Valeurs</h3>
+                    <ul>
+                        <li>Émotion & Authenticité</li>
+                        <li>Qualité artisanale</li>
+                        <li>Proximité humaine</li>
+                        <li>Responsabilité écologique</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <span class="icon">🎨</span>
+                    <h3>Identité Visuelle</h3>
+                    <p>Design harmonieux alliant tons naturels (blanc cassé, vert sauge, rose poudré) et touches vives saisonnières.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Personas Clients -->
+        <div class="slide">
+            <h2>Nos Clients Cibles</h2>
+            <div class="persona-card">
+                <h4>💕 L'Acheteur Romantique (25-45 ans)</h4>
+                <p><strong>Profil :</strong> Cadre dynamique, entrepreneur, freelance avec pouvoir d'achat élevé</p>
+                <p><strong>Comportement :</strong> Achat émotionnel et impulsif, sensible au visuel et à la livraison express</p>
+                <p><strong>Occasions :</strong> Anniversaires, Saint-Valentin, demandes en mariage, réconciliations</p>
+            </div>
+            <div class="persona-card">
+                <h4>🏢 Le Professionnel Exigeant (30-55 ans)</h4>
+                <p><strong>Profil :</strong> Assistant de direction, RH, responsable événementiel, dirigeant d'entreprise</p>
+                <p><strong>Comportement :</strong> Planification rigoureuse, recherche de fiabilité et service client impeccable</p>
+                <p><strong>Besoins :</strong> Décoration de bureaux, cadeaux clients, événements corporatifs</p>
+            </div>
+            <div class="persona-card">
+                <h4>💒 Les Créateurs d'Événements (25-50 ans)</h4>
+                <p><strong>Profil :</strong> Wedding planners, organisateurs d'événements, futurs mariés perfectionnistes</p>
+                <p><strong>Comportement :</strong> Attention extrême aux détails, budget conséquent, recherche d'exclusivité</p>
+                <p><strong>Besoins :</strong> Bouquets de mariée, arches florales, centres de table, boutonnières</p>
+            </div>
+        </div>
+
+        <!-- Slide 4: Fonctionnalités Avancées -->
+        <div class="slide">
+            <h2>Fonctionnalités Implémentées</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <span class="icon">🛍️</span>
+                    <h3>E-commerce Intelligent</h3>
+                    <ul>
+                        <li>Catalogue dynamique avec filtres avancés</li>
+                        <li>Recherche par IA et recommandations</li>
+                        <li>Gestion stocks temps réel</li>
+                        <li>Collections multiples (panier, favoris)</li>
+                        <li>URLs SEO-optimisées</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">⚙️</span>
+                    <h3>Administration Pro</h3>
+                    <ul>
+                        <li>Interface admin sécurisée</li>
+                        <li>CRUD complet avec permissions</li>
+                        <li>Gestion d'images optimisée</li>
+                        <li>Workflow de publication</li>
+                        <li>Analytics intégrées</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🔒</span>
+                    <h3>Sécurité Renforcée</h3>
+                    <ul>
+                        <li>Authentification multi-niveaux</li>
+                        <li>Protection anti-injection SQL</li>
+                        <li>Système anti-spam intelligent</li>
+                        <li>Chiffrement des données</li>
+                        <li>Sessions sécurisées</li>
+                    </ul>
+                </div>
+                <div class="feature-card">
+                    <span class="icon">🎯</span>
+                    <h3>Expérience Utilisateur</h3>
+                    <ul>
+                        <li>Design responsive et accessible</li>
+                        <li>Mode sombre/clair</li>
+                        <li>Interface intuitive</li>
+                        <li>Performance optimisée</li>
+                        <li>Navigation fluide</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Architecture Technique -->
+        <div class="slide">
+            <h2>Architecture Technique</h2>
+            <div class="highlight-box">
+                <h3>🏗️ Infrastructure Moderne</h3>
+                <p>Architecture MVC robuste avec base de données relationnelle optimisée et sécurité de niveau entreprise</p>
+            </div>
+            <div class="content-grid">
+                <div class="content-box">
+                    <h3>🗄️ Base de Données</h3>
+                    <ul>
+                        <li><strong>item</strong> - Catalogue avec métadonnées complètes</li>
+                        <li><strong>tag</strong> - Système de tags flexible</li>
+                        <li><strong>collection</strong> - Paniers et listes utilisateur</li>
+                        <li><strong>operator</strong> - Gestion multi-utilisateurs</li>
+                        <li><strong>search</strong> - Analytics des recherches</li>
+                        <li><strong>message</strong> - Communication client</li>
+                    </ul>
+                </div>
+                <div class="content-box">
+                    <h3>🚀 Fonctionnalités</h3>
+                    <ul>
+                        <li>Gestion stocks en temps réel</li>
+                        <li>Système de collections avancé</li>
+                        <li>Analytics comportementales</li>
+                        <li>Saisonnalité automatique</li>
+                        <li>Upload d'images optimisé</li>
+                        <li>SEO intégré</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="tech-stack">
+                <div class="tech-item">PHP 8.2.12</div>
+                <div class="tech-item">MariaDB 10.4</div>
+                <div class="tech-item">PDO Sécurisé</div>
+                <div class="tech-item">Architecture MVC</div>
+                <div class="tech-item">Sessions Chiffrées</div>
+                <div class="tech-item">Contraintes Référentielles</div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Positionnement Concurrentiel -->
+        <div class="slide">
+            <h2>Avantage Concurrentiel</h2>
+            <div class="competitor-grid">
+                <div class="competitor-card">
+                    <h4>Gift.be</h4>
+                    <p>✅ Design épuré</p>
+                    <p>❌ Navigation complexe</p>
+                    <div class="score">Performance: 79/100</div>
+                    <div class="score">Chargement: 1.25s</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>Euroflorist.be</h4>
+                    <p>✅ Catalogue étendu</p>
+                    <p>❌ Lenteur excessive</p>
+                    <div class="score">Performance: 73/100</div>
+                    <div class="score">Chargement: 6.57s</div>
+                </div>
+                <div class="competitor-card">
+                    <h4>Bergamotte.fr</h4>
+                    <p>✅ Esthétique soignée</p>
+                    <p>❌ Bugs fonctionnels</p>
+                    <div class="score">Performance: 65/100</div>
+                    <div class="score">Chargement: 1.90s</div>
+                </div>
+            </div>
+            <div class="highlight-box">
+                <h3>🏆 MonBouquetPrèsdeChezMoi.io</h3>
+                <p><strong>Notre solution complète :</strong> Architecture moderne, fonctionnalités avancées, sécurité renforcée et performance optimisée</p>
+                <div style="margin-top: 20px; font-size: 1.2em; color: #2c5530;">
+                    <strong>Performance cible : 95/100 • Chargement : <1s • Expérience utilisateur premium</strong>
+                </div>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Précédent</button>
+            <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Suivant →</button>
+        </div>
+    </div>
+
+    <script>
+        let currentSlideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+        const totalSlides = slides.length;
+
+        document.getElementById('totalSlides').textContent = totalSlides;
+
+        function updateProgressBar() {
+            const progress = ((currentSlideIndex + 1) / totalSlides) * 100;
+            document.getElementById('progressBar').style.width = progress + '%';
+        }
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            slides[index].classList.add('active');
+            
+            document.getElementById('currentSlide').textContent = index + 1;
+            updateProgressBar();
+            
+            // Update navigation buttons
+            document.getElementById('prevBtn').disabled = index === 0;
+            document.getElementById('nextBtn').disabled = index === totalSlides - 1;
+        }
+
+        function changeSlide(direction) {
+            const newIndex = currentSlideIndex + direction;
+            if (newIndex >= 0 && newIndex < totalSlides) {
+                currentSlideIndex = newIndex;
+                showSlide(currentSlideIndex);
+            }
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+                changeSlide(-1);
+                e.preventDefault();
+            } else if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') {
+                changeSlide(1);
+                e.preventDefault();
+            } else if (e.key === 'Home') {
+                currentSlideIndex = 0;
+                showSlide(currentSlideIndex);
+                e.preventDefault();
+            } else if (e.key === 'End') {
+                currentSlideIndex = totalSlides - 1;
+                showSlide(currentSlideIndex);
+                e.preventDefault();
+            }
+        });
+
+        // Touch/swipe support
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        document.addEventListener('touchstart', function(e) {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        document.addEventListener('touchend', function(e) {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        });
+
+        function handleSwipe() {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+            
+            if (Math.abs(diff) > swipeThreshold) {
+                if (diff > 0) {
+                    changeSlide(1); // Swipe left - next slide
+                } else {
+                    changeSlide(-1); // Swipe right - previous slide
+                }
+            }
+        }
+
+        // Auto-advance slides (optional)
+        let autoAdvanceTimer;
+        
+        function startAutoAdvance() {
+            autoAdvanceTimer = setInterval(() => {
+                if (currentSlideIndex < totalSlides - 1) {
+                    changeSlide(1);
+                } else {
+                    currentSlideIndex = 0;
+                    showSlide(currentSlideIndex);
+                }
+            }, 10000); // 10 seconds
+        }
+
+        function stopAutoAdvance() {
+            clearInterval(autoAdvanceTimer);
+        }
+
+        // Initialize
+        showSlide(0);
+        updateProgressBar();
+
+        // Optional: Start auto-advance after 5 seconds of inactivity
+        // startAutoAdvance();
+        
+        // Stop auto-advance on user interaction
+        document.addEventListener('click', stopAutoAdvance);
+        document.addEventListener('keydown', stopAutoAdvance);
+        document.addEventListener('touchstart', stopAutoAdvance);
+    </script>
+</body>
+</html>
