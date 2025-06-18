@@ -51,7 +51,7 @@
   <section id="contact-acceuil">
       <h2>Rejoignez Nous</h2>
 
-      <a href="contact.html">Contact</a>
+      <a href="/contact">Contact</a>
       <a href="#">E-mail</a>
 
   </section>
