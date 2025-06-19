@@ -22,6 +22,7 @@ if(!empty($uri_parts[0]) && $uri_parts[0] === 'admin'){
 }
 else $zone = 'public';
 
+// nom = controller
 if(empty($uri_parts[0])){
     $controller = 'home';
 }
@@ -29,15 +30,18 @@ else{
     $controller = $uri_parts[0];
 }
 
+// si admin ET utilisateur non connecté = redirection vers /checkin
 if($zone === 'admin' && empty($_SESSION['active_user']))
     header('Location: /checkin');
 
+// nom = action
 if (empty($uri_parts[1])) {
     $action = $controller;
 } else {
     $action = $uri_parts[1];
 }
 
+// nom = slug
 $slug = null;
 if (!empty($uri_parts[2])) {
     $slug = $uri_parts[2];
